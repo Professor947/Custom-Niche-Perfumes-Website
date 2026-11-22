@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Design tokens — quiet, warm neutrals with one restrained accent. */
+@theme {
+  --color-ink: #1c1915;
+  --color-ink-soft: #2a2620;
+  --color-ivory: #f7f2ea;
+  --color-paper: #fbf8f3;
+  --color-sand: #ebe3d6;
+  --color-line: #d9cfbf;
+  --color-stone: #5e564b; /* body-muted text: ~6.6:1 on ivory */
+  --color-gold: #9a7432; /* decorative accent, large text only */
+  --color-gold-deep: #7a5a22; /* accent text on light: ~5.9:1 on ivory */
+  --color-gold-light: #d1ad6b; /* accent on ink: ~8:1 */
+  --color-error: #9b2c1f;
+  --color-success: #3f5b3a;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold-light);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scroll reveal — only hides content when JS is present and motion is welcome. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.9s ease,
+      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .js .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Native date input: keep it tappable and on-palette. */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}

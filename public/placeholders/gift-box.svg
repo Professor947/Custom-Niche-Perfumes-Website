@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Placeholder: Gift boxes">
+<rect width="400" height="500" fill="#efe8dc"/>
+<g fill="none" stroke="#9a8f80" stroke-width="2"><rect x="100" y="180" width="200" height="170"/><rect x="90" y="150" width="220" height="40"/><path d="M200 150v200M200 150c-30-40-70-30-50 0M200 150c30-40 70-30 50 0"/></g>
+<text x="200" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#7d7366">Gift boxes</text>
+<text x="200" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" letter-spacing="2" fill="#9a8f80">PLACEHOLDER — REPLACE</text>
+</svg>
